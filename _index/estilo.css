@@ -1,0 +1,252 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web'); /*Comando para carregar fonte do Google Fonts*/
+@font-face { /*Comandos para carregar uma fonte localizada no mesmo servidor/computador que o código*/
+    font-family: 'FonteLogo'; /*Nome dado a fonte*/
+    src: url('_fonts/bubblegum-sans-regular.otf'); /*local que o arquivo está*/
+}
+
+body{ /*Comandos gerais*/
+    background-color: #dddddd;
+    color: rgba(0,0,0,1);
+    font-family: Arial, sans-serif; /*Mudando a fonte padrão da página*/
+}
+
+/*Aqui será configurada a primeira div*/
+
+#interface{ 
+    background-color: #ffffff;
+    width: 1250px;
+    margin: -20px auto 0px auto; /*A margem do topo teve que ser negativa devido ao padrão considerado pelo navegador*/
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    padding: 10px;
+}
+
+/*Aqui será a formatação do cabeçalho do site*/
+
+header#cabecalho{
+    border-bottom: 1px #606060 solid;
+    height: 140px;
+    background-image: url("../_imagens/glass-logo-peq.jpg");/*Colocando uma imagem decorativa*/
+    background-repeat: no-repeat;
+    background-position: left bottom; /*Propriedade utilizada para posicionar a imagem de background. É importante destacar que seu valor pode ser absoluto, posicionando a imagem nos extremos, ou pode ser proporcional, indicando a proporção de deslocamento no eixo horizontal e vertical respectivamente.*/
+    position: relative;/*Foi necessário definir com posição relativa para que o menu de navegação, que é um objeto filho, não fosse deslocado ao mudarmos o tamnho da janela*/
+}
+
+header#cabecalho h1{
+    font-family: 'FonteLogo', sans-serif; /*A primeira é a fonte local carregada e a segunda um backup*/
+    font-size: 30px;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+header#cabecalho h2{
+    font-family: 'Titillium Web', sans-serif; /*A primeira é a fonte online carregada e a segunda um backup*/
+    font-size: 15px;
+    color: #888888;
+    opacity: .7;
+    padding: 0px;
+    margin-top: 5px;
+}
+
+header#cabecalho img#icone{
+    position: relative; /*Foi alterado para uma posição relativa pois dessa forma o posicionamento do elemento não afetado por um possível zoom na página web, o que ocorria em um posicionamento absoluto*/
+    bottom: 30px;
+    left: 1085px;
+}
+
+p{
+    text-align: justify; /*Os textos já vem alinhados no lado esquerdo, mas com essa propriedade deixamos alinhado também no lado direito*/
+    text-indent: 50px; /*Aqui foi adicionado 50px de margem no início do parágrafo*/
+}
+
+/*A seguir será a formatação de imagens com legenda*/
+
+figure.foto-legenda{
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+    position: relative; /*comando exigido devido à posição absoluta configurada na legenda, a qual é um objeto filho do mesmo*/
+}
+
+figure.foto-legenda img{ /*As duas propriedades a seguir serão para tornar to tamanho da imagem elástico, de forma que sempre acompanhará a borda*/
+    width: 100%;
+    height: 100%;
+}
+
+figure.foto-legenda figcaption{ /*Comandos para estilizar corretamente a legenda da imagem*/
+    position: absolute;/*Com este comando faz com que a legenda possua uma posição absoluta com relação à borda da imagem, possibilitando o posicionamento da mesma através das propriedades top, bottom, right e left*/
+    top: 0px;
+    color: white;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+figure.foto-legenda figcaption:hover{
+    opacity: 1;
+}
+
+/*A seguir será a formatação do menu*/
+
+nav#menu-de-navegacao ul{
+    list-style: none;
+    text-transform: uppercase;    
+    position: absolute; /*Foi utilizado a posição absoluta pois o objetivo era colocar o menu muito além do objeto pai. Nessa situação caso fosse utilizado a posição relative, ocasionaria em erros*/
+    top: -25px; /*Na posição relative devemos determinar o deslocamento de forma inversa à posição absolute*/
+    right: 15px;
+}
+
+#menu-de-navegacao h1{
+    display: none; /*Foi utilizado essa propriedade em vez de apagar o texto do html porque trata-se de uma informação importante para um mecanismo de busca*/
+}
+
+#menu-de-navegacao li{
+    display: inline; /*Essa propriedade foi utilizada para alinhar os itens, conforme modelo de menu*/
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 2px;
+    transition: background-color 1s;
+}
+
+#menu-de-navegacao li:hover{
+    background-color: #606060;
+}
+
+#menu-de-navegacao a{
+    color: black;
+    text-decoration: none;
+}
+
+#menu-de-navegacao a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+/*A seguir será formatada o corpo da página*/
+
+section#corpo{
+    display: block;
+    width: 600px;
+    float: left;
+    border-right: 1px solid #606060;
+    padding-right: 20px;
+    
+}
+
+aside#lateral{
+    display: block;
+    width: 550px;
+    float: right;
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 15px 0 0 0;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+aside#lateral h2{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 25px;
+    color: #606060;
+    margin-top: 0px;
+}
+
+aside#lateral h3{
+    background-color: #606060;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 5px;
+}
+
+footer#rodape{
+    clear: both;
+    border-top: 1px solid #606060;
+}
+
+footer#rodape p{
+    text-align: center;
+}
+
+/*Aqui inicia a formatação da tabela de especificação técnica*/
+
+table#tabela-espec{
+    border: 1px solid #606060;
+    margin-left: auto; /*Os dois valores automatizados nas margens é para centralizar a tabela independente do tamanho da janela do navegador utilizado*/
+    margin-right: auto;
+    border-spacing: 0px;
+}
+
+table#tabela-espec caption{
+    color: #888888;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+table#tabela-espec caption span{
+    font-size: 9px;
+    display: block;
+    float: right;
+    margin-top: 12px;
+    
+}
+
+table#tabela-espec td{
+    border: 1px solid #606060;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+table#tabela-espec td.titulo{
+    text-align: right;
+    color: white;
+    background-color: #606060;
+    vertical-align: top;
+}
+
+table#tabela-espec td.dado{
+    text-align: left;
+    
+}
+
+/*Aqui inicia a formatação de cada dos artigos envolvidos*/
+
+article#noticia-principal h2{
+    font-size: 20px;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+article#noticia-principal hgroup#cabecalho-artigo h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 25px;
+    color: #606060;
+    margin: 0px;
+}
+
+article#noticia-principal hgroup#cabecalho-artigo h2#guia-caminho{
+    color: #cecece;
+    font-size: 12px;
+    background-color: white;
+    margin: 10px 0px 20px 0px;
+    padding: 0px;
+    font-weight: bolder;
+}
+
+article#noticia-principal hgroup#cabecalho-artigo h2#autor{
+    color: #cecece;
+    font-size: 12px;
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bolder;
+}
+
+article#noticia-principal hgroup#cabecalho-artigo h3{
+    text-align: right; /*Aqui não foi utilizado a tag display pois tratava-sede um texto que não poderia ser sobreposto*/
+    font-size: 8px;
+}
