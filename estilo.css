@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web'); /*Comando para carregar fonte do Google Fonts*/
 @font-face { /*Comandos para carregar uma fonte localizada no mesmo servidor/computador que o código*/
     font-family: 'FonteLogo'; /*Nome dado a fonte*/
-    src: url('_fonts/bubblegum-sans-regular.otf'); /*local que o arquivo está*/
+    src: url('_index/_fonts/bubblegum-sans-regular.otf'); /*local que o arquivo está*/
 }
 
 body{ /*Comandos gerais*/
@@ -26,7 +26,7 @@ body{ /*Comandos gerais*/
 header#cabecalho{
     border-bottom: 1px #606060 solid;
     height: 140px;
-    background-image: url("../_imagens/glass-logo-peq.jpg");/*Colocando uma imagem decorativa*/
+    background-image: url("_imagens/glass-logo-peq.jpg");/*Colocando uma imagem decorativa*/
     background-repeat: no-repeat;
     background-position: left bottom; /*Propriedade utilizada para posicionar a imagem de background. É importante destacar que seu valor pode ser absoluto, posicionando a imagem nos extremos, ou pode ser proporcional, indicando a proporção de deslocamento no eixo horizontal e vertical respectivamente.*/
     position: relative;/*Foi necessário definir com posição relativa para que o menu de navegação, que é um objeto filho, não fosse deslocado ao mudarmos o tamnho da janela*/
